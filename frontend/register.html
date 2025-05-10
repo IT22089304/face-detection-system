@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Face Registration</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Face Registration</h2>
+
+    <input type="text" id="name" placeholder="Enter Name" required />
+    <input type="email" id="email" placeholder="Enter Email" required />
+    <input type="text" id="phone" placeholder="Enter Phone Number" required />
+    <input type="password" id="password" placeholder="Enter Password" required />
+
+    <p id="instructions" class="instructions">Align your face properly.</p>
+
+    <video id="webcam" autoplay></video>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <button id="capture-btn">Capture</button>
+    <button id="register-btn" disabled>Register</button>
+
+    <br><br>
+    <!-- ✅ Back to Login -->
+    <button id="back-to-login">Back to Login</button>
+  </div>
+
+  <!-- ✅ Script (QR + Firebase + Face Upload) -->
+  <script type="module" src="static/script.js"></script>
+
+  <!-- ✅ Simple back navigation -->
+  <script>
+    document.getElementById("back-to-login").addEventListener("click", () => {
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>
