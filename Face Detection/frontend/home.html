@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome - Face Recognition System</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <style>
+    /* Base reset and theme background */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('../frontend//6.jpg') no-repeat center center;
+      background-size: cover;      
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Outer frame */
+    .frame {
+      width: 600px;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Role container */
+    .role-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .role-container h2 {
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: #1e1e2f;
+    }
+
+    /* Role buttons */
+    .role-container button {
+      width: 100%;
+      max-width: 250px;
+      margin: 10px 0;
+      padding: 15px;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 8px;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      border: none;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .role-container button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="role-container">
+      <h2>Select Your Role</h2>
+      <button onclick="redirectToRegister('doctor')">Doctor</button>
+      <button onclick="redirectToRegister('patient')">Patient</button>
+      <button onclick="redirectToRegister('admin')">Admin</button>
+    </div>
+  </div>
+
+  <script>
+    function redirectToRegister(role) {
+      sessionStorage.setItem("selectedRole", role);
+      window.location.href = "register.html";
+    }
+  </script>
+</body>
+</html>

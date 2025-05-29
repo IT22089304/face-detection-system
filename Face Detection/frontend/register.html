@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Face Registration</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <style>
+    .error-text {
+      color: red;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    input.invalid {
+      border: 2px solid red;
+    }
+
+    input.valid {
+      border: 2px solid green;
+    }
+
+    #captured-preview {
+      margin-top: 20px;
+      display: none;
+      position: relative;
+    }
+
+    #captured-image {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    #delete-capture {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      cursor: pointer;
+      font-size: 20px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Face Registration</h2>
+
+    <input type="text" id="name" placeholder="Enter Name" required />
+    <p id="name-error" class="error-text"></p>
+
+    <input type="email" id="email" placeholder="Enter Email" required />
+    <p id="email-error" class="error-text"></p>
+
+    <input type="text" id="phone" placeholder="Enter Phone Number" required />
+    <p id="phone-error" class="error-text"></p>
+
+    <p id="instructions" class="instructions">Align your face properly.</p>
+
+    <video id="webcam" autoplay></video>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <button id="capture-btn">Capture</button>
+    <button id="register-btn">Register</button>
+
+    <!-- 📸 Captured Image Preview -->
+    <div id="captured-preview">
+      <img id="captured-image" src="" alt="Captured Face" />
+      <span id="delete-capture">✖</span>
+    </div>
+
+    <br><br>
+    <!-- ✅ Back to Login -->
+    <button id="back-to-login">Back to Login</button>
+  </div>
+
+  <!-- ✅ Script (QR + Firebase + Face Upload) -->
+  <script type="module" src="static/script.js"></script>
+
+  <!-- ✅ Simple back navigation -->
+  <script>
+    document.getElementById("back-to-login").addEventListener("click", () => {
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

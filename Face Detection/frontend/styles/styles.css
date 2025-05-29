@@ -1,0 +1,107 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Segoe UI', sans-serif;
+    background: url('../6.jpg') no-repeat center center;
+    background-size: cover;    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+input:invalid {
+  border: 2px solid red;
+}
+
+input:valid {
+  border: 2px solid green;
+}
+
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin: 4px 0 8px 0;
+}
+
+#back-to-login:hover {
+    color: #000;
+}
+
+/* Main registration card */
+.container {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    background: #fff;
+    width: 100%;
+    max-width: 650px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title */
+.container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 70%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+/* Instructions */
+.instructions {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    margin: 12px 0;
+}
+
+/* Webcam preview */
+#webcam {
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background: #f4f4f4;
+    min-height: 180px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Buttons */
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px 5px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    transition: opacity 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Align capture and register buttons horizontally */
+#capture-btn,
+#register-btn {
+    width: 48%;
+}
